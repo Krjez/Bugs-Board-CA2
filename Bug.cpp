@@ -8,7 +8,6 @@ Bug::Bug(int id, std::pair<int, int> position, int direction)
 {
     this->id = id;
     this->position = position;
-    this->direction = direction;
+    this->direction = Direction(direction-1);
     this->alive = true;
-};
-
+}

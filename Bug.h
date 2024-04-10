@@ -14,7 +14,7 @@ class Bug
 protected:
     int id;
     std::pair<int, int> position;
-    int direction;//TODO remake
+    enum Direction{NORTH, EAST, SOUTH, WEST} direction;//TODO recheck later
     bool alive;
     std::list<std::pair<int,int>> path;
 public:
