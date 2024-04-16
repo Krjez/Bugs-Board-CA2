@@ -20,7 +20,7 @@ protected:
 public:
     Bug(int id, std::pair<int, int> position, int direction);
     virtual void move()=0;
-    virtual bool isWayBlocked();
+    bool isWayBlocked();
 };
 
 

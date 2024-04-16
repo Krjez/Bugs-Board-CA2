@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Bugs_Board_CA2 main.cpp
         Bug.h
-        Bug.cpp)
+        Bug.cpp
+        Board.cpp
+        Board.h)

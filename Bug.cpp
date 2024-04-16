@@ -11,3 +11,13 @@ Bug::Bug(int id, std::pair<int, int> position, int direction)
     this->direction = Direction(direction-1);
     this->alive = true;
 }
+
+bool Bug::isWayBlocked()
+{
+    if(direction==NORTH)
+    {
+
+    }
+
+    return false;
+}
