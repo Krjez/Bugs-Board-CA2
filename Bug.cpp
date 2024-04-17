@@ -14,10 +14,34 @@ Bug::Bug(int id, std::pair<int, int> position, int direction)
 
 bool Bug::isWayBlocked()
 {
-    if(direction==NORTH)
+    switch (direction)
     {
-
+        case NORTH:
+            if(position.first == 0)
+            {
+                return true;
+            }
+            break;
+        case SOUTH:
+            if(position.first == 9)
+            {
+                return true;
+            }
+            break;
+        case WEST:
+            if(position.second == 0)
+            {
+                return true;
+            }
+            break;
+        case EAST:
+            if(position.second == 9)
+            {
+                return true;
+            }
+            break;
+        default:
+            break;
     }
-
     return false;
 }
