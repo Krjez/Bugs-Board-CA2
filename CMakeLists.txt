@@ -7,4 +7,8 @@ add_executable(Bugs_Board_CA2 main.cpp
         Bug.h
         Bug.cpp
         Board.cpp
-        Board.h)
+        Board.h
+        BugTypes/Crawler.cpp
+        BugTypes/Crawler.h
+        BugTypes/Hopper.cpp
+        BugTypes/Hopper.h)
