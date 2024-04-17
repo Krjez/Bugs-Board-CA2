@@ -4,16 +4,12 @@
 
 #include "Board.h"
 
-Board::Board(std::vector<std::pair<int, int>> cells, std::vector<Bug*> bugs)
+Board::Board(std::map<std::pair<int,int>, std::vector<Bug*>> cell)
 {
-    this->cells = cells;
-    this->bugs = bugs;
+    this->cell = cell;
 }
 
 void Board::tap()
 {
-    for (Bug b : bugs)
-    {
-        std::move(b);
-    }
+
 }
