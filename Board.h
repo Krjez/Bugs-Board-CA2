@@ -7,6 +7,7 @@
 
 #include <map>
 #include <vector>
+#include <iostream>
 #include "Bug.h"
 
 class Board
@@ -16,6 +17,7 @@ private:
 public:
     Board();
     void addBug(std::pair<int,int> pos, Bug *bug);
+    void displayAllBugs();
     void tap();
 };
 

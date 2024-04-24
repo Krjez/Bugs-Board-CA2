@@ -7,24 +7,25 @@
 
 using namespace std;
 
-void createBoard();
+Board createBoard();
 
 int main()
 {
-    createBoard();
-    
+    Board board = createBoard();
+    board.displayAllBugs();
+
+
+
 
 }
 
 /**
  * Board creation and populating with bugs
  */
-void createBoard()
+Board createBoard()
 {
     Board board = Board();
-
     ifstream file("../bugs.txt");
-
     if(file)
     {
         const char delimiter = ';';
@@ -76,5 +77,5 @@ void createBoard()
     {
         cout << "Error when loading in the file." << endl;
     }
-
+    return board;
 }

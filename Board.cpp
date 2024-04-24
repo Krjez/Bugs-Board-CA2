@@ -20,6 +20,17 @@ void Board::addBug(std::pair<int,int> pos, Bug *bug)
     board.find(pos)->second.push_back(bug);
 }
 
+void Board::displayAllBugs()
+{
+    for (const auto &cell : board)
+    {
+        for (const auto &bug: cell.second)
+        {
+            std::cout << bug << std::endl;
+        }
+    }
+}
+
 void Board::tap()
 {
     for (const auto &cell : board)
