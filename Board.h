@@ -15,6 +15,7 @@ private:
     std::map<std::pair<int,int>, std::vector<Bug*>> board;
 public:
     Board();
+    void addBug(std::pair<int,int> pos, Bug *bug);
     void tap();
 };
 

@@ -10,9 +10,14 @@ Board::Board()
     {
         for(int y = 0; y < 10; y++)
         {
-            this->board.insert({{x,y},std::vector<Bug*>()});
+            board.insert({{x,y},std::vector<Bug*>()});
         }
     }
+}
+
+void Board::addBug(std::pair<int,int> pos, Bug *bug)
+{
+    board.find(pos)->second.push_back(bug);
 }
 
 void Board::tap()
