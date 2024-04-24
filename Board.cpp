@@ -26,7 +26,7 @@ void Board::displayAllBugs()
     {
         for (const auto &bug: cell.second)
         {
-            std::cout << bug << std::endl;
+            std::cout << *bug << std::endl;
         }
     }
 }

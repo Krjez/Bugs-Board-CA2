@@ -4,8 +4,9 @@
 
 #include "Bug.h"
 
-Bug::Bug(int id, std::pair<int, int> position, int direction, int size)
+Bug::Bug(std::string type, int id, std::pair<int, int> position, int direction, int size)
 {
+    this->type = type;
     this->id = id;
     this->position = position;
     this->direction = Direction(direction-1);
@@ -45,4 +46,19 @@ bool Bug::isWayBlocked()
             break;
     }
     return false;
+}
+
+std::string Bug::toString() const
+{
+    return "Id: " + std::to_string(id) +
+    ", Type: " + type +
+    ", Position: (" + std::to_string(position.first) + "," + std::to_string(position.second) + ")" +
+    ", Size: " + std::to_string(size) +
+    ", Direction: " + std::to_string(direction) +
+    ", Status: " + (alive ? "Alive" : "Dead");
+}
+
+std::ostream &operator<<(std::ostream &out, const Bug &bug)
+{
+    return out << bug.toString();
 }

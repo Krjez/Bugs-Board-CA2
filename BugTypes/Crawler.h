@@ -10,7 +10,7 @@
 class Crawler : public Bug
 {
 public:
-    Crawler(int id, std::pair<int, int> position, int direction, int size); // == using Bug::Bug;
+    Crawler(int id, std::pair<int, int> position, int direction, int size);
     void move();
 };
 

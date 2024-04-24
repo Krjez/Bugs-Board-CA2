@@ -6,11 +6,10 @@
 #include <ctime>
 #include "Crawler.h"
 
-Crawler::Crawler(int id, std::pair<int, int> position, int direction, int size) : Bug(id, position, direction, size){}
+Crawler::Crawler(int id, std::pair<int, int> position, int direction, int size) : Bug("Crawler", id, position, direction, size){}
 
 void Crawler::move()
 {
-    srand(time(NULL));
     while(isWayBlocked())
     {
         direction = Direction(rand() % 4);

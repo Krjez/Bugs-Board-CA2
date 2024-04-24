@@ -11,6 +11,7 @@ Board createBoard();
 
 int main()
 {
+    srand(time(NULL));
     Board board = createBoard();
     board.displayAllBugs();
 
