@@ -1,0 +1,7 @@
+# ninja log v5
+91	616	7356690457826404	CMakeFiles/Bugs_Board_CA2.dir/Bug.cpp.obj	5d8d0f270bc47e68
+108	825	7356690460018544	CMakeFiles/Bugs_Board_CA2.dir/BugTypes/Hopper.cpp.obj	33d7be80fcc23135
+123	837	7356690460132377	CMakeFiles/Bugs_Board_CA2.dir/BugTypes/Crawler.cpp.obj	460d19aafc0591c9
+74	911	7356690460865599	CMakeFiles/Bugs_Board_CA2.dir/Board.cpp.obj	f39ffaba02be46df
+0	1054	7356690462316009	CMakeFiles/Bugs_Board_CA2.dir/main.cpp.obj	e21bf187f1569317
+1055	1313	7356690464830705	Bugs_Board_CA2.exe	d962702e59b57982
