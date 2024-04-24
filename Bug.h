@@ -14,10 +14,11 @@ protected:
     int id;
     std::pair<int, int> position;
     enum Direction{NORTH, EAST, SOUTH, WEST} direction;
+    int size;
     bool alive;
     std::list<std::pair<int,int>> path;
 public:
-    Bug(int id, std::pair<int, int> position, int direction);
+    Bug(int id, std::pair<int, int> position, int direction, int size);
     virtual void move()=0;
     bool isWayBlocked();
 };

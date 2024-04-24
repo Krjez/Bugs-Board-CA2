@@ -4,11 +4,12 @@
 
 #include "Bug.h"
 
-Bug::Bug(int id, std::pair<int, int> position, int direction)
+Bug::Bug(int id, std::pair<int, int> position, int direction, int size)
 {
     this->id = id;
     this->position = position;
     this->direction = Direction(direction-1);
+    this->size = size;
     this->alive = true;
 }
 

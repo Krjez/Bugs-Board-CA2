@@ -48,7 +48,7 @@ void createBoard()
                 direction = stoi(value);
                 getline(file,value,delimiter);
                 size = stoi(value);
-                Crawler c = Crawler(id, x, y, direction, size);
+                Crawler c = Crawler(id, {x,y}, direction, size);
 
             }
         }

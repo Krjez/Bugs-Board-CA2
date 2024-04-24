@@ -6,7 +6,7 @@
 #include <ctime>
 #include "Crawler.h"
 
-Crawler::Crawler(int id, std::pair<int, int> position, int direction) : Bug(id, position, direction){}
+Crawler::Crawler(int id, std::pair<int, int> position, int direction, int size) : Bug(id, position, direction, size){}
 
 void Crawler::move()
 {

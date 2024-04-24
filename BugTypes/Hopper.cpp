@@ -6,7 +6,7 @@
 #include <ctime>
 #include "Hopper.h"
 
-Hopper::Hopper(int id, std::pair<int, int> position, int direction, int hopLength) : Bug(id, position, direction)
+Hopper::Hopper(int id, std::pair<int, int> position, int direction, int size, int hopLength) : Bug(id, position, direction, size)
 {
     this->hopLength = hopLength;
 }

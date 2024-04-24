@@ -12,7 +12,7 @@ class Hopper : public Bug
 private:
     int hopLength;
 public:
-    Hopper(int id, std::pair<int, int> position, int direction, int hopLength);
+    Hopper(int id, std::pair<int, int> position, int direction, int size, int hopLength);
     void move();
 };
 
