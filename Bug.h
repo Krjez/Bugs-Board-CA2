@@ -8,13 +8,12 @@
 #ifndef BUGS_BOARD_CA2_BUG_H
 #define BUGS_BOARD_CA2_BUG_H
 
-
 class Bug
 {
 protected:
     int id;
     std::pair<int, int> position;
-    enum Direction{NORTH, EAST, SOUTH, WEST} direction;//TODO recheck later
+    enum Direction{NORTH, EAST, SOUTH, WEST} direction;
     bool alive;
     std::list<std::pair<int,int>> path;
 public:

@@ -4,12 +4,26 @@
 
 #include "Board.h"
 
-Board::Board(std::map<std::pair<int,int>, std::vector<Bug*>> cell)
+Board::Board()
 {
-    this->cell = cell;
+    std::map<std::pair<int,int>, std::vector<Bug*>> board;
+    this->board = board;
+    for(int x = 0; x < 10; x++)
+    {
+        for(int y = 0; y < 10; y++)
+        {
+            this->board.insert({{x,y},std::vector<Bug*>()});
+        }
+    }
 }
 
 void Board::tap()
 {
-
+    for (const auto &cell : board)
+    {
+        for (const auto &bug: cell.second)
+        {
+            bug->move();
+        }
+    }
 }

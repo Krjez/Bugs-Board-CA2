@@ -12,9 +12,9 @@
 class Board
 {
 private:
-    std::map<std::pair<int,int>, std::vector<Bug*>> cell;
+    std::map<std::pair<int,int>, std::vector<Bug*>> board;
 public:
-    Board(std::map<std::pair<int,int>, std::vector<Bug*>> cell);
+    Board();
     void tap();
 };
 
