@@ -18,41 +18,33 @@ Board::Board()
 void Board::addBug(std::pair<int,int> pos, Bug *bug)
 {
     board.find(pos)->second.push_back(bug);
+    bugs.push_back(bug);
 }
 
 void Board::displayAllBugs() const
 {
-    for (const auto &cell : board)
+    for (const auto &bug : bugs)
     {
-        for (const auto &bug: cell.second)
-        {
-            std::cout << *bug << std::endl;
-        }
+        std::cout << *bug << std::endl;
     }
 }
 
 void Board::displayAllBugsHistory() const
 {
-    for (const auto &cell : board)
+    for (const auto &bug : bugs)
     {
-        for (const auto &bug: cell.second)
-        {
-            std::cout << bug->getHistory() << std::endl;
-        }
+        std::cout << bug->getHistory() << std::endl;
     }
 }
 
 void Board::findBug(int id) const
 {
-    for (const auto &cell : board)
+    for (const auto &bug : bugs)
     {
-        for (const auto &bug: cell.second)
+        if(bug->getId() == id)
         {
-            if(bug->getId() == id)
-            {
-                std::cout << *bug << std::endl;
-                return;
-            }
+            std::cout << *bug << std::endl;
+            return;
         }
     }
     std::cout << "Bug " << id << " not found." << std::endl;
@@ -60,12 +52,9 @@ void Board::findBug(int id) const
 
 void Board::tap()
 {
-    for (const auto &cell : board)
+    for (const auto &bug : bugs)
     {
-        for (const auto &bug: cell.second)
-        {
-            // TODO if(bug.alive
-            bug->move();
-        }
+        // TODO if(bug.alive
+        bug->move();
     }
 }
