@@ -16,7 +16,12 @@ Bug::Bug(std::string type, int id, std::pair<int, int> position, int direction, 
 
 int Bug::getId() const
 {
-    return this->id;
+    return id;
+}
+
+bool Bug::getAlive() const
+{
+    return alive;
 }
 
 std::string Bug::getHistory() const

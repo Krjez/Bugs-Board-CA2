@@ -54,7 +54,9 @@ void Board::tap()
 {
     for (const auto &bug : bugs)
     {
-        // TODO if(bug.alive
-        bug->move();
+        if(bug->getAlive())
+        {
+            bug->move();
+        }
     }
 }

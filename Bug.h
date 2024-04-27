@@ -23,6 +23,7 @@ protected:
 public:
     Bug(std::string type, int id, std::pair<int, int> position, int direction, int size);
     int getId() const;
+    bool getAlive() const;
     virtual void move()=0;
     bool isWayBlocked();
     std::string getHistory() const;
