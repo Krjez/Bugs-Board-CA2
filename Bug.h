@@ -19,10 +19,13 @@ protected:
     int size;
     bool alive;
     std::list<std::pair<int,int>> path;
+    int diedToId;
 public:
     Bug(std::string type, int id, std::pair<int, int> position, int direction, int size);
+    int getId() const;
     virtual void move()=0;
     bool isWayBlocked();
+    std::string getHistory() const;
     virtual std::string toString() const;
     friend std::ostream &operator<<(std::ostream &out, const Bug &bug);
 };

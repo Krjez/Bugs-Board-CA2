@@ -14,6 +14,25 @@ Bug::Bug(std::string type, int id, std::pair<int, int> position, int direction, 
     this->alive = true;
 }
 
+int Bug::getId() const
+{
+    return this->id;
+}
+
+std::string Bug::getHistory() const
+{
+    std::string history = std::to_string(id) + " " + type + " Path: ";
+    auto iter = path.cbegin();
+    while(iter != path.cend())
+    {
+        history += "(" + std::to_string(iter->first) + ",";
+        history += std::to_string(iter->second) + "),";
+        iter++;
+    }
+    history += alive ? " Alive!" : " Eaten by " + std::to_string(diedToId);
+    return history;
+}
+
 bool Bug::isWayBlocked()
 {
     switch (direction)

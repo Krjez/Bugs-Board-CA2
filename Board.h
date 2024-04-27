@@ -17,7 +17,9 @@ private:
 public:
     Board();
     void addBug(std::pair<int,int> pos, Bug *bug);
-    void displayAllBugs();
+    void displayAllBugs() const;
+    void displayAllBugsHistory() const;
+    void findBug(int id) const;
     void tap();
 };
 

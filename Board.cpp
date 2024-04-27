@@ -20,7 +20,7 @@ void Board::addBug(std::pair<int,int> pos, Bug *bug)
     board.find(pos)->second.push_back(bug);
 }
 
-void Board::displayAllBugs()
+void Board::displayAllBugs() const
 {
     for (const auto &cell : board)
     {
@@ -31,12 +31,40 @@ void Board::displayAllBugs()
     }
 }
 
+void Board::displayAllBugsHistory() const
+{
+    for (const auto &cell : board)
+    {
+        for (const auto &bug: cell.second)
+        {
+            std::cout << bug->getHistory() << std::endl;
+        }
+    }
+}
+
+void Board::findBug(int id) const
+{
+    for (const auto &cell : board)
+    {
+        for (const auto &bug: cell.second)
+        {
+            if(bug->getId() == id)
+            {
+                std::cout << *bug << std::endl;
+                return;
+            }
+        }
+    }
+    std::cout << "Bug " << id << " not found." << std::endl;
+}
+
 void Board::tap()
 {
     for (const auto &cell : board)
     {
         for (const auto &bug: cell.second)
         {
+            // TODO if(bug.alive
             bug->move();
         }
     }

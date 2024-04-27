@@ -9,15 +9,52 @@ using namespace std;
 
 Board createBoard();
 
-int main()
-{
+int main() {
     srand(time(NULL));
     Board board = createBoard();
-    board.displayAllBugs();
+    bool run = true;
+    cout << "Welcome to the bug board." << endl;
 
+    while(run)
+    {
+        cout << "Choose an option (type 0-3):" << endl;
+        cout << "0. End the program" << endl;
+        cout << "1. Display all bugs" << endl;
+        cout << "2. Find a bug (by id)" << endl;
+        cout << "3. Tap the board" << endl;
+        cout << "4. Display life history of all bugs" << endl;
 
+        string read;
+        cin >> read;
+        int option = stoi(read);
 
-
+        switch (option)
+        {
+            case 0:
+                cout << "Thanks for playing." << endl;
+                run = false;
+                break;
+            case 1:
+                board.displayAllBugs();
+                break;
+            case 2:
+                cout << "Input id of bug to be found:" << endl;
+                int id;
+                cin >> id;
+                board.findBug(id);
+                break;
+            case 3:
+                cout << "Board tapped. Bugs moved." << endl;
+                board.tap();
+                break;
+            case 4:
+                board.displayAllBugsHistory();
+                break;
+            default:
+                cout << "Wrong input." << endl;
+                break;
+        }
+    }
 }
 
 /**
