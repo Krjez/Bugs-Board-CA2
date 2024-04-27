@@ -7,11 +7,11 @@
 
 using namespace std;
 
-Board createBoard();
+void initializeBoard(Board &board);
 
 int main() {
     srand(time(NULL));
-    Board board = createBoard();
+    Board board = Board();
     bool run = true;
     cout << "Welcome to the bug board." << endl;
 
@@ -19,10 +19,11 @@ int main() {
     {
         cout << "Choose an option (type 0-3):" << endl;
         cout << "0. End the program" << endl;
-        cout << "1. Display all bugs" << endl;
-        cout << "2. Find a bug (by id)" << endl;
-        cout << "3. Tap the board" << endl;
-        cout << "4. Display life history of all bugs" << endl;
+        cout << "1. Initialize Bug board" << endl;
+        cout << "2. Display all Bugs" << endl;
+        cout << "3. Find a Bug (by id)" << endl;
+        cout << "4. Tap the Board" << endl;
+        cout << "5. Display life history of all Bugs" << endl;
 
         string read;
         cin >> read;
@@ -35,19 +36,22 @@ int main() {
                 run = false;
                 break;
             case 1:
-                board.displayAllBugs();
+                initializeBoard(board);
                 break;
             case 2:
+                board.displayAllBugs();
+                break;
+            case 3:
                 cout << "Input id of bug to be found:" << endl;
                 int id;
                 cin >> id;
                 board.findBug(id);
                 break;
-            case 3:
+            case 4:
                 cout << "Board tapped. Bugs moved." << endl;
                 board.tap();
                 break;
-            case 4:
+            case 5:
                 board.displayAllBugsHistory();
                 break;
             default:
@@ -60,9 +64,8 @@ int main() {
 /**
  * Board creation and populating with bugs
  */
-Board createBoard()
+void initializeBoard(Board &board)
 {
-    Board board = Board();
     ifstream file("../bugs.txt");
     if(file)
     {
@@ -115,5 +118,4 @@ Board createBoard()
     {
         cout << "Error when loading in the file." << endl;
     }
-    return board;
 }
