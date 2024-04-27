@@ -86,6 +86,25 @@ void Board::displayAllBugs() const
     }
 }
 
+void Board::displayAllCells() const
+{
+    for(const auto &cell : board)
+    {
+        std::cout << "(" + std::to_string(cell.first.first) + "," + std::to_string(cell.first.second) + "):";
+        if(cell.second.empty())
+        {
+            std::cout << " empty" << std::endl;
+        }
+        else
+        {
+            for(const auto &bug : cell.second)
+            {
+                std::cout << " (" + bug->getType() + " " + std::to_string(bug->getId()) + ")" << std::endl;
+            }
+        }
+    }
+}
+
 void Board::displayAllBugsHistory() const
 {
     for (const auto &bug : bugs)
@@ -121,7 +140,7 @@ void Board::findBug(int id) const
             return;
         }
     }
-    std::cout << "Bug " << id << " not found." << std::endl;
+    std::cout << "Bug " + std::to_string(id) + " not found." << std::endl;
 }
 
 void Board::tap()

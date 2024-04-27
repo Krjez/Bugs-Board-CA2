@@ -21,6 +21,7 @@ public:
     void initializeBoard();
     void addBug(std::pair<int,int> pos, Bug *bug);
     void displayAllBugs() const;
+    void displayAllCells() const;
     void displayAllBugsHistory() const;
     void writeAllBugsHistory() const;
     void findBug(int id) const;

@@ -19,6 +19,7 @@ int main() {
         cout << "3. Find a Bug (by id)" << endl;
         cout << "4. Tap the Board" << endl;
         cout << "5. Display life history of all Bugs" << endl;
+        cout << "6. Display all cells listing their Bugs" << endl;
         cout << "8. Exit (writes life history into file)" << endl;
 
         string read;
@@ -49,6 +50,9 @@ int main() {
                 break;
             case 5:
                 board.displayAllBugsHistory();
+                break;
+            case 6:
+                board.displayAllCells();
                 break;
             case 8:
                 board.writeAllBugsHistory();

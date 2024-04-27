@@ -19,6 +19,11 @@ int Bug::getId() const
     return id;
 }
 
+std::string Bug::getType() const
+{
+    return type;
+}
+
 bool Bug::getAlive() const
 {
     return alive;
