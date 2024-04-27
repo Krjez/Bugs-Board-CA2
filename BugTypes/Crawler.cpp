@@ -17,16 +17,16 @@ void Crawler::move()
     switch (direction)
     {
         case NORTH:
-            position.first -= 1;
-            break;
-        case SOUTH:
-            position.first += 1;
-            break;
-        case WEST:
             position.second -= 1;
             break;
-        case EAST:
+        case SOUTH:
             position.second += 1;
+            break;
+        case WEST:
+            position.first -= 1;
+            break;
+        case EAST:
+            position.first += 1;
             break;
     }
     path.push_back(std::pair<int,int>(position));

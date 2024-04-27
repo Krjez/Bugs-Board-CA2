@@ -20,28 +20,6 @@ void Hopper::move()
     switch (direction)
     {
         case NORTH:
-            if(position.first - hopLength < 0)
-            {
-                position.first = 0;
-                break;
-            }
-            else
-            {
-                position.first -= hopLength;
-                break;
-            }
-        case SOUTH:
-            if(position.first + hopLength > 9)
-            {
-                position.first = 9;
-                break;
-            }
-            else
-            {
-                position.first += hopLength;
-                break;
-            }
-        case WEST:
             if(position.second - hopLength < 0)
             {
                 position.second = 0;
@@ -52,10 +30,32 @@ void Hopper::move()
                 position.second -= hopLength;
                 break;
             }
-        case EAST:
+        case SOUTH:
             if(position.second + hopLength > 9)
             {
                 position.second = 9;
+                break;
+            }
+            else
+            {
+                position.second += hopLength;
+                break;
+            }
+        case WEST:
+            if(position.first - hopLength < 0)
+            {
+                position.first = 0;
+                break;
+            }
+            else
+            {
+                position.first -= hopLength;
+                break;
+            }
+        case EAST:
+            if(position.first + hopLength > 9)
+            {
+                position.first = 9;
                 break;
             }
             else
