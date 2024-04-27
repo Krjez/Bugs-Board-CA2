@@ -24,6 +24,7 @@ public:
     Bug(std::string type, int id, std::pair<int, int> position, int direction, int size);
     int getId() const;
     std::string getType() const;
+    std::pair<int, int> getPosition() const;
     bool getAlive() const;
     virtual void move()=0;
     bool isWayBlocked();

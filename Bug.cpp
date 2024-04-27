@@ -24,6 +24,11 @@ std::string Bug::getType() const
     return type;
 }
 
+std::pair<int, int> Bug::getPosition() const
+{
+    return position;
+}
+
 bool Bug::getAlive() const
 {
     return alive;

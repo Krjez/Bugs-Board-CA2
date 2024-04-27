@@ -88,19 +88,30 @@ void Board::displayAllBugs() const
 
 void Board::displayAllCells() const
 {
-    for(const auto &cell : board)
+    for(int x = 0; x < 10; x++)
     {
-        std::cout << "(" + std::to_string(cell.first.first) + "," + std::to_string(cell.first.second) + "):";
-        if(cell.second.empty())
+        for(int y = 0; y < 10; y++)
         {
-            std::cout << " empty" << std::endl;
-        }
-        else
-        {
-            for(const auto &bug : cell.second)
+            std::pair<int, int> cell = {x, y};
+            std::cout << "(" << x << "," << y << "):";
+
+            auto iter = board.find(cell);
+            if (iter == board.end() || iter->second.empty())
             {
-                std::cout << " (" + bug->getType() + " " + std::to_string(bug->getId()) + ")" << std::endl;
+                std::cout << " empty" << std::endl;
             }
+            else
+            {
+                for(const auto &bug : bugs)
+                {
+                    if(bug->getPosition() == cell)
+                    {
+                        std::cout << " (" + bug->getType() + " " + std::to_string(bug->getId()) + ")";
+                    }
+                }
+                std::cout << std::endl;
+            }
+            iter++;
         }
     }
 }
@@ -145,11 +156,16 @@ void Board::findBug(int id) const
 
 void Board::tap()
 {
-    for (const auto &bug : bugs)
+    for (Bug* bug : bugs)
     {
         if(bug->getAlive())
         {
             bug->move();
         }
+    }
+    board.clear();
+    for (Bug* bug : bugs)
+    {
+        board[bug->getPosition()].push_back(bug);
     }
 }
