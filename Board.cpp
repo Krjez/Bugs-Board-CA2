@@ -96,10 +96,18 @@ void Board::displayAllBugsHistory() const
 
 void Board::writeAllBugsHistory() const
 {
-
-    for (const auto &bug : bugs)
+    std::ofstream file("../bugs_life_history_date_time.out");
+    if(file)
     {
-        std::cout << bug->getHistory() << std::endl;
+        for (const auto &bug : bugs)
+        {
+            file << bug->getHistory() << std::endl;
+        }
+        file.close();
+    }
+    else
+    {
+        std::cout << "Error when loading in the file." << std::endl;
     }
 }
 
