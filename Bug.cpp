@@ -88,6 +88,13 @@ bool Bug::isWayBlocked()
     return false;
 }
 
+void Bug::eat(Bug* &bug)
+{
+    size += bug->getSize();
+    bug->diedToId = id;
+    bug->alive = false;
+}
+
 std::string Bug::toString() const
 {
     return "Id: " + std::to_string(id) +

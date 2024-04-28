@@ -201,7 +201,10 @@ void Board::fight()
                 }
                 for (auto &bug : bugsToFight)
                 {
-
+                    if(bug != kingOfCell)
+                    {
+                        kingOfCell->eat(bug);
+                    }
                 }
             }
         }
