@@ -3,7 +3,6 @@
 //
 
 #include <cstdlib>
-#include <ctime>
 #include "Crawler.h"
 
 Crawler::Crawler(int id, std::pair<int, int> position, int direction, int size) : Bug("Crawler", id, position, direction, size){}

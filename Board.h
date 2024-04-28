@@ -26,6 +26,7 @@ public:
     void writeAllBugsHistory() const;
     void findBug(int id) const;
     void tap();
+    void fight();
 };
 
 #endif //BUGS_BOARD_CA2_BOARD_H

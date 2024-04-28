@@ -156,7 +156,7 @@ void Board::findBug(int id) const
 
 void Board::tap()
 {
-    for (Bug* bug : bugs)
+    for (Bug* &bug : bugs)
     {
         if(bug->getAlive())
         {
@@ -167,5 +167,43 @@ void Board::tap()
     for (Bug* bug : bugs)
     {
         board[bug->getPosition()].push_back(bug);
+    }
+    fight();
+}
+
+void Board::fight()
+{
+    Bug* kingOfCell;
+    std::vector<Bug*> bugsToFight;
+
+    for (const auto &cell : board)
+    {
+        if(cell.second.size() > 1)
+        {
+            bugsToFight.clear();
+            for (const auto &bug : cell.second)
+            {
+                if(bug->getAlive())
+                {
+                    bugsToFight.push_back(bug);
+                }
+            }
+            if(bugsToFight.size() > 1)
+            {
+                kingOfCell = bugsToFight.front();
+                for (const auto &bug : bugsToFight)
+                {
+                    if(bug->getSize() > kingOfCell->getSize() ||
+                       (bug->getSize() == kingOfCell->getSize() && rand()%2))
+                    {
+                        kingOfCell = bug;
+                    }
+                }
+                for (auto &bug : bugsToFight)
+                {
+
+                }
+            }
+        }
     }
 }

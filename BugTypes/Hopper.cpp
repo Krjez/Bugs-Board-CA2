@@ -3,7 +3,6 @@
 //
 
 #include <cstdlib>
-#include <ctime>
 #include "Hopper.h"
 
 Hopper::Hopper(int id, std::pair<int, int> position, int direction, int size, int hopLength) : Bug("Hopper", id, position, direction, size)

@@ -25,6 +25,7 @@ public:
     int getId() const;
     std::string getType() const;
     std::pair<int, int> getPosition() const;
+    int getSize() const;
     bool getAlive() const;
     virtual void move()=0;
     bool isWayBlocked();
