@@ -20,7 +20,9 @@ int main() {
         cout << "4. Tap the Board" << endl;
         cout << "5. Display life history of all Bugs" << endl;
         cout << "6. Display all cells listing their Bugs" << endl;
-        cout << "7. Run the simulation (initializes board, runs, writes history and ends)" << endl;
+        //The simulation is set up to work "only" 90 seconds -
+        //because the basic crawlers can end up chasing each other around the board infinitely
+        cout << "7. Run the simulation (initializes board, runs for 90 seconds, writes history and ends)" << endl;
         cout << "8. Exit (writes life history into file)" << endl;
 
         string read;
@@ -58,6 +60,7 @@ int main() {
             case 7:
                 board.runSimulation();
                 cout << "Simulation ended and results loaded into the file, goodbye." << endl;
+                run = false;
                 break;
             case 8:
                 board.writeAllBugsHistory();

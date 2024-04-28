@@ -11,4 +11,6 @@ add_executable(Bugs_Board_CA2 main.cpp
         BugTypes/Crawler.cpp
         BugTypes/Crawler.h
         BugTypes/Hopper.cpp
-        BugTypes/Hopper.h)
+        BugTypes/Hopper.h
+        BugTypes/Scavenger.cpp
+        BugTypes/Scavenger.h)

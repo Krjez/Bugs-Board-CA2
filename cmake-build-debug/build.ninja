@@ -79,6 +79,12 @@ build CMakeFiles/Bugs_Board_CA2.dir/BugTypes/Hopper.cpp.obj: CXX_COMPILER__Bugs_
   OBJECT_DIR = CMakeFiles\Bugs_Board_CA2.dir
   OBJECT_FILE_DIR = CMakeFiles\Bugs_Board_CA2.dir\BugTypes
 
+build CMakeFiles/Bugs_Board_CA2.dir/BugTypes/Scavenger.cpp.obj: CXX_COMPILER__Bugs_Board_CA2_unscanned_Debug C$:/Users/Kubak/Projects/C++/Bugs$ Board$ CA2/BugTypes/Scavenger.cpp || cmake_object_order_depends_target_Bugs_Board_CA2
+  DEP_FILE = CMakeFiles\Bugs_Board_CA2.dir\BugTypes\Scavenger.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Bugs_Board_CA2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Bugs_Board_CA2.dir\BugTypes
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Bugs_Board_CA2
@@ -87,7 +93,7 @@ build CMakeFiles/Bugs_Board_CA2.dir/BugTypes/Hopper.cpp.obj: CXX_COMPILER__Bugs_
 #############################################
 # Link the executable Bugs_Board_CA2.exe
 
-build Bugs_Board_CA2.exe: CXX_EXECUTABLE_LINKER__Bugs_Board_CA2_Debug CMakeFiles/Bugs_Board_CA2.dir/main.cpp.obj CMakeFiles/Bugs_Board_CA2.dir/Bug.cpp.obj CMakeFiles/Bugs_Board_CA2.dir/Board.cpp.obj CMakeFiles/Bugs_Board_CA2.dir/BugTypes/Crawler.cpp.obj CMakeFiles/Bugs_Board_CA2.dir/BugTypes/Hopper.cpp.obj
+build Bugs_Board_CA2.exe: CXX_EXECUTABLE_LINKER__Bugs_Board_CA2_Debug CMakeFiles/Bugs_Board_CA2.dir/main.cpp.obj CMakeFiles/Bugs_Board_CA2.dir/Bug.cpp.obj CMakeFiles/Bugs_Board_CA2.dir/Board.cpp.obj CMakeFiles/Bugs_Board_CA2.dir/BugTypes/Crawler.cpp.obj CMakeFiles/Bugs_Board_CA2.dir/BugTypes/Hopper.cpp.obj CMakeFiles/Bugs_Board_CA2.dir/BugTypes/Scavenger.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Bugs_Board_CA2.dir

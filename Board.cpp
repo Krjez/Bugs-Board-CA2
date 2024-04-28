@@ -216,12 +216,12 @@ void Board::runSimulation()
     this->initializeBoard();
     int run = 2;
     int round = 0;
-    while(run > 1)
+    while(run > 1 && round < 90)
     {
         this->tap();
+        std::cout << "\nRound: " + std::to_string(++round) << std::endl;
         this->displayAllBugs();
         sleep(1);
-        std::cout << "\nRound: " + std::to_string(++round) << std::endl;
         run = 0;
         for(Bug* bug : bugs)
         {
