@@ -20,6 +20,7 @@ int main() {
         cout << "4. Tap the Board" << endl;
         cout << "5. Display life history of all Bugs" << endl;
         cout << "6. Display all cells listing their Bugs" << endl;
+        cout << "7. Run the simulation (initializes board, runs, writes history and ends)" << endl;
         cout << "8. Exit (writes life history into file)" << endl;
 
         string read;
@@ -29,7 +30,7 @@ int main() {
         switch (option)
         {
             case 0:
-                cout << "Thanks for playing." << endl;
+                cout << "Goodbye." << endl;
                 run = false;
                 break;
             case 1:
@@ -53,6 +54,10 @@ int main() {
                 break;
             case 6:
                 board.displayAllCells();
+                break;
+            case 7:
+                board.runSimulation();
+                cout << "Simulation ended and results loaded into the file, goodbye." << endl;
                 break;
             case 8:
                 board.writeAllBugsHistory();

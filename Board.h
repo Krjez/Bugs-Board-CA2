@@ -9,6 +9,7 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include <unistd.h>
 #include "Bug.h"
 
 class Board
@@ -27,6 +28,7 @@ public:
     void findBug(int id) const;
     void tap();
     void fight();
+    void runSimulation();
 };
 
 #endif //BUGS_BOARD_CA2_BOARD_H
