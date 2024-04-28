@@ -9,14 +9,17 @@
 
 /**
  * Custom Bug - Scavenger
- * Movement - slower than usual bugs, takes two taps(seconds) to make one move
- * Special ability - can ONLY eat dead bugs, but it doesn't matter if they are bigger
+ * Movement - slower than usual bugs, takes specific amount of taps(seconds) to make one move
+ * Special ability - can and ONLY eats parts of dead bugs, but it doesn't matter if they are bigger
  */
 
 class Scavenger : public Bug
 {
+private:
+    int moveCooldown;
+    int tapToMove;
 public:
-    Scavenger(int id, std::pair<int, int> position, int direction, int size);
+    Scavenger(int id, std::pair<int, int> position, int direction, int size, int moveCooldown);
     void move();
 };
 

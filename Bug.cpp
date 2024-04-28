@@ -95,6 +95,12 @@ void Bug::eat(Bug* &bug)
     bug->alive = false;
 }
 
+void Bug::eatDead(Bug* bug)
+{
+    size += bug->getSize();
+    bug->size = 0;
+}
+
 std::string Bug::toString() const
 {
     return "Id: " + std::to_string(id) +

@@ -5,7 +5,8 @@
 #include <cstdlib>
 #include "Hopper.h"
 
-Hopper::Hopper(int id, std::pair<int, int> position, int direction, int size, int hopLength) : Bug("Hopper", id, position, direction, size)
+Hopper::Hopper(int id, std::pair<int, int> position, int direction, int size, int hopLength)
+: Bug("Hopper", id, position, direction, size)
 {
     this->hopLength = hopLength;
 }

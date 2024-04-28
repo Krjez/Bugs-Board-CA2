@@ -30,6 +30,7 @@ public:
     virtual void move()=0;
     bool isWayBlocked();
     void eat(Bug* &bug);
+    void eatDead(Bug* bug);
     std::string getHistory() const;
     virtual std::string toString() const;
     friend std::ostream &operator<<(std::ostream &out, const Bug &bug);
