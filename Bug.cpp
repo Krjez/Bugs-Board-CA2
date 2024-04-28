@@ -59,25 +59,25 @@ bool Bug::isWayBlocked()
     switch (direction)
     {
         case NORTH:
-            if(position.first == 0)
-            {
-                return true;
-            }
-            break;
-        case SOUTH:
-            if(position.first == 9)
-            {
-                return true;
-            }
-            break;
-        case WEST:
             if(position.second == 0)
             {
                 return true;
             }
             break;
-        case EAST:
+        case SOUTH:
             if(position.second == 9)
+            {
+                return true;
+            }
+            break;
+        case WEST:
+            if(position.first == 0)
+            {
+                return true;
+            }
+            break;
+        case EAST:
+            if(position.first == 9)
             {
                 return true;
             }
